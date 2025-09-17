@@ -1,12 +1,25 @@
 import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import SignUp from "./pages/SignUp";
+import Dashboard from "./pages/Dashboard";
+import Projects from "./pages/Projects";
+import SignIn from "./pages/Signin";
 
 export default function App() {
   return (
     <div>
-      <h1 className="text-3xl text-amber-300 font-bold ">
-        Hi, Bilal Abdul Khaliq
-      </h1>
-      <h2>How are you? Hope so you are fine</h2>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/sign-in" element={<SignIn />} />
+          <Route path="/sign-up" element={<SignUp />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/projects" element={<Projects />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
